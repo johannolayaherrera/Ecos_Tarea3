@@ -10,7 +10,7 @@ Intrucciones de ejecución :
 
 Despúes de obtener la información desde el repositorio
 
-1. Ejecute desde el directorio del proyecto "\PSP2 Regresion\src\MavenRegresion" el comando : mvn package
+1. Ejecute desde el directorio del proyecto "\src\MavenRegresion" el comando : mvn package
 2. Luego el comando : mvn exec:java -Dexec.mainClass="com.uniandes.ecos.MavenRegresion.Controlador.EstadisticoControlador" 
 3. En la interfaz ingrese la ruta del archivo de datos (.txt).
 
