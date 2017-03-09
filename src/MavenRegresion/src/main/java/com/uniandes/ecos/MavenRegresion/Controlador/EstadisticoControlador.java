@@ -62,14 +62,15 @@ public class EstadisticoControlador {
                 resultado += String.format("%.8g%n", modelo.darBeta0());
                 resultado += "\nEl parámetro B1 : ";
                 resultado += String.format("%.8g%n", modelo.darBeta1());
-                resultado += "\nLa correlación : ";
+                resultado += "\nEl valor de r : ";
+                resultado += String.format("%.8g%n", modelo.darr());
+                resultado += "\nLa correlación (r^2): ";
                 resultado += String.format("%.8g%n", modelo.darCorrelacion());
                 resultado += "\nEstimación : ";
                 resultado += String.format("%.8g%n", modelo.darEstimacion());
                 
                 vista.mostrarMensaje(resultado);
-            } 
-            catch (Exception ex) {
+            } catch (Exception ex) {
                 vista.mostrarMensaje("Ha ocurrido un error al cargar el archivo : " + ex.getMessage());
             }
 
@@ -98,8 +99,7 @@ public class EstadisticoControlador {
                 modelo.agregarNodo(sCurrentLine);
             }
 
-        } 
-        catch (IOException e) {
+        } catch (IOException e) {
             vista.mostrarMensaje("Ha ocurrido un error al cargar el archivo : " + e.getMessage());
         }
     }

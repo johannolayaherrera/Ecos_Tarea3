@@ -204,7 +204,19 @@ public class EstadisticoModelo {
         }
         throw new Exception("No hay números registrados. Por favor verifique y cargue de nuevo.");
     }
-    
+    /**
+     * Calcula r.
+     * @return valor de r.
+     * @throws Exception se lanza cuando no hay registros cargados
+     */
+    public double darr() throws Exception {
+        if (darCantidadElementos() > 0) {
+            return ((darCantidadElementos() * darSumaXY()) - (darSumaX() * darSumaY()))
+                    / (Math.sqrt(((darCantidadElementos() * darSumaXX()) - Math.pow(darSumaX(), 2))
+                            * ((darCantidadElementos() * darSumaYY()) - Math.pow(darSumaY(), 2))
+                    ));
+        } throw new Exception("No hay números registrados. Por favor verifique y cargue de nuevo.");
+    }
     /**
      * Calcula la correlación de los datos cargados.
      * @return valor de la correlación.
@@ -259,7 +271,6 @@ public class EstadisticoModelo {
             return (
                     darBeta0() + darBeta1()*tamanioProxy
                     );
-        }
-        throw new Exception("No hay números registrados. Por favor verifique y cargue de nuevo.");
+        } throw new Exception("No hay números registrados. Por favor verifique y cargue de nuevo.");
     }
 }
